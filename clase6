@@ -1,1 +1,20 @@
-
+const lunes = "Lunes";
+const martes = "Martes";
+const miercoles = "Miercoles";
+const jueves = "Jueves";
+const viernes = "Viernes";
+const sabado = "Sabado";
+const domingo = "Domingo";
+const hoy = "Hoy es " + miercoles;
+ 
+true
+false
+ 
+console.log('que dia es hoy? ');
+console.log(hoy);
+ 
+console.log('hoy es lunes? ' + (hoy == "Hoy es Lunes")); // false
+console.log('hoy es miercoles? ' + (hoy == "Hoy es Miercoles")); // true
+console.log('hoy es martes o miercoles? ' + (hoy == "Hoy es Martes" || hoy == "Hoy es Miercoles")); // true
+console.log('hoy es miercoles y jueves? ' + (hoy == "Hoy es Miercoles" && hoy == "Hoy es Jueves")); // false
+ 
