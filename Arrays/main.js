@@ -1,56 +1,62 @@
-//array
+const list = ['Ana', 88, 'Carlos', 76, 'Karina', 63];
 
-//definir array
+let suma = 0;
+let contador = 0;
 
-//const list = ['manzana', 'pera', 'uva', 'piña'];
-//const randomList = ['pera', 32 , false ['uva']];
-//let empty = []
+let aprobados = "";
+let reprobados = "";
 
-// acceder a los elementos de un array
+let nuevaLista = [];
 
-//const fruit = list[3];
-//console.log(list.length);
-//console.log(fruit);
+//  lista
+for (let i = 0; i < list.length; i += 2) {
+  let nombre = list[i];
+  let nota = Number(list[i + 1]);
 
-//Agragar elemento a la lista 
+  suma = suma + nota;
+  contador = contador + 1;
 
-//list.push('naranja');
-//list.push('tomate');
+  // vaprueba
+  if (nota >= 70) {
+    if (aprobados === "") {
+      aprobados = nombre;
+    } else {
+      aprobados = aprobados + ", " + nombre;
+    }
+  } else {
+    if (reprobados === "") {
+      reprobados = nombre;
+    } else {
+      reprobados = reprobados + ", " + nombre;
+    }
+  }
 
+  // convertir 
+  let letra = "";
 
-//eliminar elemntos 
+  if (nota >= 95) {
+    letra = "A";
+  } else if (nota >= 90) {
+    letra = "B";
+  } else if (nota >= 80) {
+    letra = "C";
+  } else if (nota >= 70) {
+    letra = "D";
+  } else {
+    letra = "F";
+  }
 
-//list.splice(2, 1);
-//console.log(list);
+  nuevaLista.push(nombre);
+  nuevaLista.push(letra);
 
-// Loops 
-
-//for(let i = 0; i < list.length; i++) {
-//console.log(list[i]);};
-
-
-
- //output
- //pares:[]
- //impares[]
-
-const list = ['32', '87', '999', '1', '40', '111'];
-const pares = []
-const impares = []
-
-
-for(let i = 0; i < list.length, i++); {
- 
-if (list[i] % 2 === 0) {
-    pares.push(list[i]); 
-   
-} else {
-    impares.push(list[i]); 
+  console.log("La calificación de " + nombre + " es " + letra);
 }
-};
 
-console.log('Pares:', pares );
-console.log('Impares:', pares );
+// promedio
+let promedio = (suma / contador).toFixed(2);
 
-//.map
-
+// resultados
+console.log("El promedio de calificaciones es: " + promedio);
+console.log("Los estudiantes que aprobaron son: " + aprobados);
+console.log("Los estudiantes que no aprobaron son: " + reprobados);
+console.log("La lista transformada es:", nuevaLista);
